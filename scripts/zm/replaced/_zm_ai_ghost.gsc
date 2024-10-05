@@ -96,23 +96,3 @@ ghost_zone_spawning_think()
 		wait 0.1;
 	}
 }
-
-should_last_ghost_drop_powerup()
-{
-	if (flag("time_bomb_restore_active"))
-	{
-		return false;
-	}
-
-	if (!isdefined(level.ghost_round_last_ghost_origin))
-	{
-		return false;
-	}
-
-	if (!is_true(level.ghost_round_no_damage))
-	{
-		return false;
-	}
-
-	return true;
-}
