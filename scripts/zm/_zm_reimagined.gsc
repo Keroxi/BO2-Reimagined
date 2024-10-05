@@ -2390,19 +2390,19 @@ get_equipment_cost()
 {
 	if (self.equipname == "turbine")
 	{
-		return 500;
+		return 1000;
 	}
 	else if (self.equipname == "jetgun_zm")
 	{
-		return 10000;
+		return 1000;
 	}
 	else if (self.equipname == "slipgun_zm")
 	{
-		return 10000;
+		return 1000;
 	}
 	else if (self.equipname == "packasplat")
 	{
-		return 2500;
+		return 1000;
 	}
 
 	return 1000;
