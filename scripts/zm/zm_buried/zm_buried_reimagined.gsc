@@ -245,22 +245,22 @@ sloth_barricades_buyable()
 		{
 			case "juggernaut_alley":
 			case "stables_alley":
-				debris_trig.zombie_cost = 750;
+				debris_trig.zombie_cost = 100;
 				break;
 
 			case "jail":
 			case "gunstore":
 			case "mansion":
-				debris_trig.zombie_cost = 1000;
+				debris_trig.zombie_cost = 100;
 				break;
 
 			case "candystore_alley":
 			case "church":
-				debris_trig.zombie_cost = 1250;
+				debris_trig.zombie_cost = 100;
 				break;
 
 			default:
-				debris_trig.zombie_cost = 1000;
+				debris_trig.zombie_cost = 100;
 				break;
 		}
 
