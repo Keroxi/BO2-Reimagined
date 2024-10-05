@@ -7,7 +7,7 @@
 init()
 {
 	level.additionalprimaryweapon_limit = 3;
-	level.perk_purchase_limit = 4;
+	level.perk_purchase_limit = 10;
 
 	if (!level.createfx_enabled)
 	{
@@ -518,24 +518,24 @@ vending_trigger_think()
 			}
 			else
 			{
-				cost = 1500;
+				cost = 500;
 			}
 
 			break;
 
 		case "specialty_fastreload_upgrade":
 		case "specialty_fastreload":
-			cost = 3000;
+			cost = 2000;
 			break;
 
 		case "specialty_rof_upgrade":
 		case "specialty_rof":
-			cost = 2000;
+			cost = 1000;
 			break;
 
 		case "specialty_longersprint_upgrade":
 		case "specialty_longersprint":
-			cost = 2000;
+			cost = 1000;
 			break;
 
 		case "specialty_deadshot_upgrade":
@@ -545,7 +545,7 @@ vending_trigger_think()
 
 		case "specialty_additionalprimaryweapon_upgrade":
 		case "specialty_additionalprimaryweapon":
-			cost = 4000;
+			cost = 2000;
 			break;
 	}
 
