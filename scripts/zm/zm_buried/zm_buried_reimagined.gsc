@@ -85,9 +85,7 @@ init()
 	move_tombstone_collision();
 
 	level thread build_870mcs_wallbuy();
-	level thread remove_chalk_draw_points();
 	level thread enable_fountain_transport();
-	level thread disable_ghost_free_perk_on_damage();
 	level thread sloth_trap();
 }
 
@@ -364,22 +362,6 @@ build_870mcs_wallbuy()
 
 	maps\mp\zm_buried_gamemodes::builddynamicwallbuy("stablesroof", "870mcs_zm");
 }
-
-remove_chalk_draw_points()
-{
-	flag_wait("initial_blackscreen_passed");
-
-	wait 1;
-
-	foreach (stub in level.buildable_stubs)
-	{
-		if (stub.equipname == "chalk")
-		{
-			stub.buildablestruct.onuseplantobject = ::onuseplantobject_chalk;
-		}
-	}
-}
-
 onuseplantobject_chalk(entity)
 {
 	piece = entity maps\mp\zombies\_zm_buildables::player_get_buildable_piece(1);
@@ -435,34 +417,6 @@ enable_fountain_transport()
 	wait 1;
 
 	level notify("courtyard_fountain_open");
-}
-
-disable_ghost_free_perk_on_damage()
-{
-	if (!is_gametype_active("zclassic"))
-	{
-		return;
-	}
-
-	while (1)
-	{
-		disable_ghost_free_perk();
-	}
-}
-
-disable_ghost_free_perk()
-{
-	level endon("ghost_round_end");
-
-	level.ghost_round_no_damage = 1;
-
-	flag_wait("spawn_ghosts");
-
-	level waittill_any("ghost_drained_player", "ghost_damaged_player");
-
-	level.ghost_round_no_damage = 0;
-
-	flag_waitopen("spawn_ghosts");
 }
 
 add_mansion_backyard_collision()
