@@ -2052,14 +2052,14 @@ wallbuy_cost_changes()
 
 	if (isDefined(level.zombie_weapons["870mcs_zm"]))
 	{
-		cost = 1200;
+		cost = 1000;
 		level.zombie_weapons["870mcs_zm"].cost = cost;
 		level.zombie_weapons["870mcs_zm"].ammo_cost = int(cost / 2);
 	}
 
 	if (isDefined(level.zombie_weapons["an94_zm"]))
 	{
-		cost = 1500;
+		cost = 1000;
 		level.zombie_weapons["an94_zm"].cost = cost;
 		level.zombie_weapons["an94_zm"].ammo_cost = int(cost / 2);
 	}
